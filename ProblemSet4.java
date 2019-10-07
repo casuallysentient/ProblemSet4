@@ -52,7 +52,7 @@ public class ProblemSet4 {
      */
 
     public void sum() {
-      System.out.print("Lower bound: ");
+      System.out.print("\nLower bound: ");
       int lowerBound1 = in.nextInt();
       System.out.print("Upper bound: ");
       int upperBound1 = in.nextInt();
@@ -61,14 +61,19 @@ public class ProblemSet4 {
       System.out.print("Upper bound: ");
       int upperBound2 = in.nextInt();
       int integerSum1 = 0;
+      int integerSum2 = 0;
+      int addableAmount = 0;
+
 
       for (int i = lowerBound1; i <= upperBound1; i++) {
-        integerSum1++;
+        addableAmount = Math.abs(i);
+        integerSum1 += addableAmount;
       }
       for (int i = lowerBound2; i <= upperBound2; i++) {
-        integerSum2++;
+        addableAmount = Math.abs(i);
+        integerSum2 += addableAmount;
       }
-      System.out.println("\n" + integersum1 + ", " + integerSum2 + ".");
+      System.out.println("\n" + integerSum1 + "," + integerSum2 + ".");
     }
 
     /*
