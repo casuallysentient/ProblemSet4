@@ -52,28 +52,27 @@ public class ProblemSet4 {
      */
 
     public void sum() {
-      System.out.print("\nLower bound: ");
-      int lowerBound1 = in.nextInt();
-      System.out.print("Upper bound: ");
-      int upperBound1 = in.nextInt();
-      System.out.print("Lower bound: ");
-      int lowerBound2 = in.nextInt();
-      System.out.print("Upper bound: ");
-      int upperBound2 = in.nextInt();
-      int integerSum1 = 0;
-      int integerSum2 = 0;
+      int lowerBound = 1;
+      int upperBound = 0;
+      do {
+        System.out.print("\nLower bound: ");
+        lowerBound = in.nextInt();
+        System.out.print("Upper bound: ");
+        upperBound = in.nextInt();
+      } while (lowerBound > upperBound);
+
+      int integerSum = 0;
       int addableAmount = 0;
 
 
-      for (int i = lowerBound1; i <= upperBound1; i++) {
-        addableAmount = Math.abs(i);
-        integerSum1 += addableAmount;
+      for (int i = lowerBound; i <= upperBound; i++) {
+        if (i % 2 == 0) {
+          addableAmount = Math.abs(i);
+          integerSum += addableAmount;
+        }
       }
-      for (int i = lowerBound2; i <= upperBound2; i++) {
-        addableAmount = Math.abs(i);
-        integerSum2 += addableAmount;
-      }
-      System.out.println("\n" + integerSum1 + "," + integerSum2 + ".");
+
+      System.out.printf("\n%,d\n", integerSum);
     }
 
     /*
