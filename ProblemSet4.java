@@ -54,6 +54,8 @@ public class ProblemSet4 {
     public void sum() {
       int lowerBound = 1;
       int upperBound = 0;
+      int integerSum = 0;
+
       do {
         System.out.print("\nLower bound: ");
         lowerBound = in.nextInt();
@@ -61,14 +63,9 @@ public class ProblemSet4 {
         upperBound = in.nextInt();
       } while (lowerBound > upperBound);
 
-      int integerSum = 0;
-      int addableAmount = 0;
-
-
       for (int i = lowerBound; i <= upperBound; i++) {
         if (i % 2 == 0) {
-          addableAmount = Math.abs(i);
-          integerSum += addableAmount;
+          integerSum += i;
         }
       }
 
@@ -83,7 +80,21 @@ public class ProblemSet4 {
      */
 
     public void reverse() {
+      int forwardPositiveIntegerInput;
+      do {
+        System.out.print("\nPositive integer: ");
+        forwardPositiveIntegerInput = in.nextInt();
+      } while (forwardPositiveIntegerInput <= 0);
+      String forwardPositiveInteger = String.valueOf(forwardPositiveIntegerInput);
+      String reversePositiveInteger = "";
+      String digitToAdd = "";
 
+      for (int i = forwardPositiveInteger.length(); i > 0; i--) {
+        digitToAdd = forwardPositiveInteger.substring(i - 1, i);
+        reversePositiveInteger = reversePositiveInteger + digitToAdd;
+      }
+
+      System.out.println("\n" + reversePositiveInteger);
     }
 
     /*
