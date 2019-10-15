@@ -90,9 +90,13 @@ public class ProblemSet4 {
       String digitToAdd = "";
 
       for (int i = forwardPositiveInteger.length(); i > 0; i--) {
+        if(i != forwardPositiveInteger.length()) {
+          reversePositiveInteger = reversePositiveInteger + ", ";
+        }
         digitToAdd = forwardPositiveInteger.substring(i - 1, i);
         reversePositiveInteger = reversePositiveInteger + digitToAdd;
       }
+      reversePositiveInteger = reversePositiveInteger + ".";
 
       System.out.println("\n" + reversePositiveInteger);
     }
@@ -105,7 +109,10 @@ public class ProblemSet4 {
      */
 
     public void digits() {
-
+      // do {
+      //   System.out.print("\nPositive integer: ");
+      //   forwardPositiveIntegerInput = in.nextInt();
+      // } while (forwardPositiveIntegerInput <= 0);
     }
 
     /*
