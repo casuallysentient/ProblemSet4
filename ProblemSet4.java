@@ -17,29 +17,26 @@
  */
 
 import java.util.Scanner;
-
 public class ProblemSet4 {
+  private static Scanner in = new Scanner(System.in);
+  public static void main(String[] args) {
+    ProblemSet4 ps = new ProblemSet4();
 
-    private static Scanner in = new Scanner(System.in);
+    // comment out or uncomment as needed
 
-    public static void main(String[] args) {
-        ProblemSet4 ps = new ProblemSet4();
+    // ps.sum();
+    // ps.reverse();
+    // ps.digits();
+    // ps.average();
+    ps.prime();
+    ps.fibonacci();
+    ps.factors();
+    ps.mario();
+    ps.luigi();
+    ps.credit();
 
-        // comment out or uncomment as needed
-
-        ps.sum();
-        ps.reverse();
-        ps.digits();
-        ps.average();
-        ps.prime();
-        ps.fibonacci();
-        ps.factors();
-        ps.mario();
-        ps.luigi();
-        ps.credit();
-
-        in.close();
-    }
+    in.close();
+  }
 
     /*
      * Exercise 1.
@@ -155,8 +152,12 @@ public class ProblemSet4 {
         }
       } while (integerListItem >= 0);
 
-      double nonNegativeIntegerAverage = (double) integerListTotal / (double) numNonNegativeIntegers;
-      System.out.printf("\n%.2f\n", nonNegativeIntegerAverage);
+      if (numNonNegativeIntegers > 0) {
+        double nonNegativeIntegerAverage = (double) integerListTotal / (double) numNonNegativeIntegers;
+        System.out.printf("\n%.2f\n", nonNegativeIntegerAverage);
+      } else {
+        System.out.println("\nIn order for the program to work, you need to input at least one number to average before entering a negative to end the program.");
+      }
     }
 
     /*
@@ -166,7 +167,24 @@ public class ProblemSet4 {
      */
 
     public void prime() {
+      int maybePrimeInteger;
+      boolean isPrime = true;
 
+      System.out.println("");
+      do {
+        System.out.print("Non-negative integer: ");
+        maybePrimeInteger = in.nextInt();
+      } while (maybePrimeInteger < 0);
+
+      String maybePrimeString = String.valueOf(maybePrimeInteger);
+      for (int i = 2; i <= maybePrimeInteger / 2; i++) {
+
+      }
+      if (isPrime == true) {
+        System.out.println("\nPrime.");
+      } else {
+        System.out.println("\nNot prime.");
+      }
     }
 
     /*
