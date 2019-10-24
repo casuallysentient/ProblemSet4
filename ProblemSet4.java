@@ -24,10 +24,10 @@ public class ProblemSet4 {
 
     // comment out or uncomment as needed
 
-    // ps.sum();
-    // ps.reverse();
-    // ps.digits();
-    // ps.average();
+    ps.sum();
+    ps.reverse();
+    ps.digits();
+    ps.average();
     ps.prime();
     ps.fibonacci();
     ps.factors();
@@ -167,23 +167,38 @@ public class ProblemSet4 {
      */
 
     public void prime() {
-      int maybePrimeInteger;
+      int maybePrimeInteger = -1;
       boolean isPrime = true;
+      boolean isValid = true;
 
       System.out.println("");
-      do {
+      while (maybePrimeInteger < 0) {
         System.out.print("Non-negative integer: ");
         maybePrimeInteger = in.nextInt();
-      } while (maybePrimeInteger < 0);
-
-      String maybePrimeString = String.valueOf(maybePrimeInteger);
-      for (int i = 2; i <= maybePrimeInteger / 2; i++) {
-
       }
-      if (isPrime == true) {
-        System.out.println("\nPrime.");
+
+      if (maybePrimeInteger == 0 || maybePrimeInteger == 1) {
+        isValid = false;
+      }
+
+      int divisibleNumber = maybePrimeInteger - 1;
+      while (divisibleNumber > 1 && isValid == true) {
+        int remainder = maybePrimeInteger % divisibleNumber;
+        if (remainder != 0) {
+          divisibleNumber--;
+        } else {
+          isPrime = false;
+          divisibleNumber = 0;
+        }
+      }
+      if (isValid == true) {
+        if (isPrime == true) {
+          System.out.println("\nPrime.");
+        } else {
+          System.out.println("\nNot prime.");
+        }
       } else {
-        System.out.println("\nNot prime.");
+        System.out.println("\nNeither prime nor composite.");
       }
     }
 
