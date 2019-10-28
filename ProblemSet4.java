@@ -67,7 +67,7 @@ public class ProblemSet4 {
         }
       }
 
-      System.out.printf("\n%,d\n", integerSum);
+      System.out.printf("\n%,d.\n", integerSum);
     }
 
     /*
@@ -154,7 +154,7 @@ public class ProblemSet4 {
 
       if (numNonNegativeIntegers > 0) {
         double nonNegativeIntegerAverage = (double) integerListTotal / (double) numNonNegativeIntegers;
-        System.out.printf("\n%.2f\n", nonNegativeIntegerAverage);
+        System.out.printf("\n%,.2f\n", nonNegativeIntegerAverage);
       } else {
         System.out.println("\nIn order for the program to work, you need to input at least one number to average before entering a negative to end the program.");
       }
@@ -209,9 +209,26 @@ public class ProblemSet4 {
      * integer the user enters is called n, what is the nth Fibonacci number?
      */
 
-    public void fibonacci() {
+     public void fibonacci() {
+         int n = 0;
+         System.out.println("");
+         while (n <= 0 || n > 92) {
+             System.out.print("Positive integer: ");
+             n = in.nextInt();
+         }
 
-    }
+         long base1 = 0;
+         long base2 = 1;
+         long fibonacci = 0;
+
+         for (int i = 2; i <= n; i++) {
+             fibonacci = base1 + base2;
+             base1 = base2;
+             base2 = fibonacci;
+         }
+
+         System.out.println("\n" + base2 + ".");
+     }
 
     /*
      * Exercise 7.
