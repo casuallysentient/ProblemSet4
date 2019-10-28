@@ -24,13 +24,13 @@ public class ProblemSet4 {
 
     // comment out or uncomment as needed
 
-    // ps.sum();
-    // ps.reverse();
-    // ps.digits();
-    // ps.average();
-    // ps.prime();
-    // ps.fibonacci();
-    // ps.factors();
+    ps.sum();
+    ps.reverse();
+    ps.digits();
+    ps.average();
+    ps.prime();
+    ps.fibonacci();
+    ps.factors();
     ps.mario();
     ps.luigi();
     ps.credit();
@@ -279,7 +279,7 @@ public class ProblemSet4 {
       int halfPyramidHeight = 0;
       int numHashtags;
       int numSpaces;
-      System.out.println("");
+      System.out.println("\n");
       while (halfPyramidHeight < 1 || halfPyramidHeight > 24) {
           System.out.print("Height: ");
           halfPyramidHeight = in.nextInt();
@@ -306,7 +306,30 @@ public class ProblemSet4 {
      */
 
     public void luigi() {
-
+      int pyramidHeight = 0;
+      int numHashtags;
+      int numSpaces;
+      System.out.println("");
+      while (pyramidHeight < 1 || pyramidHeight > 24) {
+          System.out.print("Height: ");
+          pyramidHeight = in.nextInt();
+      }
+      System.out.println("");
+      for (int i = 1; i <= pyramidHeight; i++) {
+        numHashtags = i;
+        numSpaces = pyramidHeight - numHashtags - 1;
+        for (int x = 0; x <= numSpaces; x++) {
+          System.out.print(" ");
+        }
+        for (int y = 0; y <= numHashtags; y++) {
+          System.out.print("#");
+        }
+        System.out.print(" ");
+        for (int z = 0; z <= numHashtags; z++) {
+          System.out.print("#");
+        }
+        System.out.print("\n");
+      }
     }
 
     /*
