@@ -237,7 +237,35 @@ public class ProblemSet4 {
      */
 
     public void factors() {
+      int intToFactor = 0;
+      System.out.println("");
+      while (intToFactor <= 0) {
+          System.out.print("Positive integer: ");
+          intToFactor = in.nextInt();
+      }
 
+      String usedFactors = " ";
+      int factor1;
+      int factor2;
+      boolean lineStarted = false;
+      double factoringRemainder;
+
+      for (int i = 1; i <= intToFactor; i++) {
+        factor1 = i;
+        factoringRemainder = (double) intToFactor % (double) factor1;
+        factor2 = intToFactor / factor1;
+        if (factoringRemainder == 0 && !usedFactors.contains(String.valueOf(" " + factor1 + " ")) && !usedFactors.contains(String.valueOf(" " + factor2 + " "))) {
+          usedFactors = usedFactors + factor1 + " " + factor2 + " ";
+          if (lineStarted == true) {
+            System.out.print(", ");
+          } else {
+            System.out.println(" ");
+          }
+          System.out.print(factor1 + ", " + factor2);
+          lineStarted = true;
+        }
+      }
+      System.out.print(".");
     }
 
     /*
@@ -270,6 +298,37 @@ public class ProblemSet4 {
      */
 
     public void credit() {
-
+      System.out.println(" ");
+      in.nextLine();
+      System.out.print("\nNumber: ");
+      String cardNumber = in.nextLine();
+      int sumEveryOtherDigit = 0;
+      int digitToMultiply;
+      int totalSum = 0;
+      for (int i = cardNumber.length() - 2; i >= 0; i -= 2) {
+        digitToMultiply = Character.getNumericValue(cardNumber.charAt(i));
+        sumEveryOtherDigit = digitToMultiply * 2;
+          if (sumEveryOtherDigit >= 10) {
+            totalSum += (int)((sumEveryOtherDigit / Math.pow(10, 0)) % 10) + (int)((sumEveryOtherDigit / Math.pow(10, 1)) % 10);
+          } else {
+            totalSum += sumEveryOtherDigit;
+          }
+      }
+      for (int i = cardNumber.length() - 1; i >= 0; i -= 2) {
+        digitToMultiply = Character.getNumericValue(cardNumber.charAt(i));
+        totalSum += digitToMultiply;
+      }
+      String everyOtherDigitString = Integer.toString(totalSum);
+      if (everyOtherDigitString.charAt(everyOtherDigitString.length() - 1) == '0') {
+        if (cardNumber.charAt(0) == '3' && (cardNumber.charAt(1) == '4' || cardNumber.charAt(1) == '7')) {
+          System.out.println("\nAmex.");
+        } else if (cardNumber.charAt(0) == '5' && (cardNumber.charAt(1) == '1' || cardNumber.charAt(1) == '2' || cardNumber.charAt(3) == '3' || cardNumber.charAt(4) == '4' || cardNumber.charAt(5) == '5')) {
+          System.out.println("\nMastercard.");
+        } else if (cardNumber.charAt(0) == '4') {
+          System.out.println("\nVisa.");
+        }
+      } else {
+        System.out.println("\nInvalid.");
+      }
     }
 }
