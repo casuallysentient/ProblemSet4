@@ -24,13 +24,13 @@ public class ProblemSet4 {
 
     // comment out or uncomment as needed
 
-    ps.sum();
-    ps.reverse();
-    ps.digits();
-    ps.average();
-    ps.prime();
-    ps.fibonacci();
-    ps.factors();
+    // ps.sum();
+    // ps.reverse();
+    // ps.digits();
+    // ps.average();
+    // ps.prime();
+    // ps.fibonacci();
+    // ps.factors();
     ps.mario();
     ps.luigi();
     ps.credit();
@@ -54,12 +54,12 @@ public class ProblemSet4 {
       int integerSum = 0;
 
       System.out.println("");
-      do {
+      while (lowerBound > upperBound) {
         System.out.print("Lower bound: ");
         lowerBound = in.nextInt();
         System.out.print("Upper bound: ");
         upperBound = in.nextInt();
-      } while (lowerBound > upperBound);
+      }
 
       for (int i = lowerBound; i <= upperBound; i++) {
         if (i % 2 == 0) {
@@ -238,7 +238,7 @@ public class ProblemSet4 {
 
     public void factors() {
       int intToFactor = 0;
-      System.out.println("");
+      System.out.println(" ");
       while (intToFactor <= 0) {
           System.out.print("Positive integer: ");
           intToFactor = in.nextInt();
@@ -276,7 +276,26 @@ public class ProblemSet4 {
      */
 
     public void mario() {
-
+      int halfPyramidHeight = 0;
+      int numHashtags;
+      int numSpaces;
+      System.out.println("");
+      while (halfPyramidHeight < 1 || halfPyramidHeight > 24) {
+          System.out.print("Height: ");
+          halfPyramidHeight = in.nextInt();
+      }
+      System.out.println("");
+      for (int i = 1; i <= halfPyramidHeight; i++) {
+        numHashtags = i;
+        numSpaces = halfPyramidHeight - numHashtags - 1;
+        for (int x = 0; x <= numSpaces; x++) {
+          System.out.print(" ");
+        }
+        for (int y = 0; y <= numHashtags; y++) {
+          System.out.print("#");
+        }
+        System.out.print("\n");
+      }
     }
 
     /*
@@ -298,9 +317,9 @@ public class ProblemSet4 {
      */
 
     public void credit() {
-      System.out.println(" ");
+      System.out.println("");
       in.nextLine();
-      System.out.print("\nNumber: ");
+      System.out.print("Number: ");
       String cardNumber = in.nextLine();
       int sumEveryOtherDigit = 0;
       int digitToMultiply;
